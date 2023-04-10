@@ -5,6 +5,7 @@
 // 2. Import them to to index.js and write the tab-switching logic there. Event
 //    Listeners for each tab that wipes out the current contents and then runs
 //    the correct 'tab module' to populate it again
+// IMG's: rawpixel --> https://www.freepik.com/author/rawpixel-com
 
 import { loadHomePage } from './home';
 import { loadMenuPage } from './menu';
@@ -13,56 +14,82 @@ import { loadContactPage } from './contact';
 console.log('This seem to be working.');
 
 function loadNavBar() {
-  const content = document.querySelector('#content');
-
   const navBar = document.createElement('div');
   navBar.classList.add('navBar');
 
+  const header = document.createElement('h1');
+  header.textContent = 'Prime Cuts';
+  navBar.appendChild(header);
+
   const home = document.createElement('a');
-  home.href = '???';
+  home.href = '#';
   home.textContent = 'Home';
-  navBar.appendChild(home);
-  home.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent browser from following link's href
+  home.addEventListener('click', () => {
     clearContent();
     document.body.appendChild(loadHomePage());
   });
+  navBar.appendChild(home);
 
   const menu = document.createElement('a');
-  menu.href = '???';
+  menu.href = '#';
   menu.textContent = 'Menu';
-  navBar.appendChild(menu);
-  menu.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent browser from following link's href
+  menu.addEventListener('click', () => {
     clearContent();
     document.body.appendChild(loadMenuPage());
   });
+  navBar.appendChild(menu);
 
   const contact = document.createElement('a');
-  contact.href = '???';
+  contact.href = '#';
   contact.textContent = 'Contact';
-  navBar.appendChild(contact);
-  contact.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent browser from following link's href
+  contact.addEventListener('click', () => {
     clearContent();
     document.body.appendChild(loadContactPage());
   });
+  navBar.appendChild(contact);
 
-  content.appendChild(navBar);
+  return navBar;
+}
 
-  return content;
+function loadFooter() {
+  const footer = document.createElement('div');
+  footer.classList.add('footer');
+
+  const github = document.createElement('a');
+  github.href = 'https://github.com/martinsmeder';
+  github.target = '_blank';
+  github.textContent = 'Coded by: Martin Smeder';
+  footer.appendChild(github);
+
+  const rawpixel = document.createElement('a');
+  rawpixel.href = 'https://www.freepik.com/author/rawpixel-com';
+  rawpixel.target = '_blank';
+  rawpixel.textContent = 'Images by: Rawpixel';
+  footer.appendChild(rawpixel);
+
+  return footer;
 }
 
 function clearContent() {
   const content = document.querySelector('#content');
-  const navbar = content.querySelector('.navBar');
-  while (content.firstChild && content.firstChild !== navbar) {
+  const navbar = document.querySelector('.navBar');
+  const footer = document.querySelector('.footer');
+  while (
+    content.firstChild &&
+    content.firstChild !== navbar &&
+    content.firstChild !== footer
+  ) {
     content.removeChild(content.firstChild);
   }
-  while (content.lastChild && content.lastChild !== navbar) {
+  while (
+    content.lastChild &&
+    content.lastChild !== navbar &&
+    content.firstChild !== footer
+  ) {
     content.removeChild(content.lastChild);
   }
 }
 
 document.body.appendChild(loadNavBar());
 document.body.appendChild(loadHomePage());
+document.body.appendChild(loadFooter());

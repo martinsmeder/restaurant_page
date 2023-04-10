@@ -1,10 +1,6 @@
 function loadMenuPage() {
   const content = document.querySelector('#content');
 
-  const image = document.createElement('img');
-  image.src = '../assets/images/space_steak.png';
-  content.appendChild(image);
-
   const header = document.createElement('h1');
   header.textContent = 'menu';
   content.appendChild(header);

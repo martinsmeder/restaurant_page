@@ -2,7 +2,7 @@ function loadHomePage() {
   const content = document.querySelector('#content');
 
   const image = document.createElement('img');
-  image.src = '../assets/images/space_steak.png';
+  image.src = '../assets/images/meat.jpg';
   content.appendChild(image);
 
   const header = document.createElement('h1');
