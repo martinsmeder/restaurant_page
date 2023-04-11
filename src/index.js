@@ -1,11 +1,7 @@
 // TO DO:
-// 1. Home, Menu and Contact pages, each inside a separate module (each module will
-//    export a function that creates div element, adds content and style, and append
-//    it to the DOM)
-// 2. Import them to to index.js and write the tab-switching logic there. Event
-//    Listeners for each tab that wipes out the current contents and then runs
-//    the correct 'tab module' to populate it again
-// IMG's: rawpixel --> https://www.freepik.com/author/rawpixel-com
+// 1. Get the pages to load in the right order every time
+// 2. Add simple contents
+// 3. Style
 
 import { loadHomePage } from './home';
 import { loadMenuPage } from './menu';
@@ -74,6 +70,7 @@ function clearContent() {
   const content = document.querySelector('#content');
   const navbar = document.querySelector('.navBar');
   const footer = document.querySelector('.footer');
+
   while (
     content.firstChild &&
     content.firstChild !== navbar &&
