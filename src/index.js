@@ -1,15 +1,14 @@
 // TO DO:
-// 1. Get the pages to load in the right order every time
-// 2. Add simple contents
-// 3. Style
+// 1. Add simple contents
+// 2. Style (including some effect to show which page the user is on)
 
 import { loadHomePage } from './home';
 import { loadMenuPage } from './menu';
 import { loadContactPage } from './contact';
 
-console.log('This seem to be working.');
-
 function loadNavBar() {
+  const content = document.querySelector('#content');
+
   const navBar = document.createElement('div');
   navBar.classList.add('navBar');
 
@@ -44,49 +43,24 @@ function loadNavBar() {
   });
   navBar.appendChild(contact);
 
-  return navBar;
-}
+  content.appendChild(navBar);
 
-function loadFooter() {
-  const footer = document.createElement('div');
-  footer.classList.add('footer');
-
-  const github = document.createElement('a');
-  github.href = 'https://github.com/martinsmeder';
-  github.target = '_blank';
-  github.textContent = 'Coded by: Martin Smeder';
-  footer.appendChild(github);
-
-  const rawpixel = document.createElement('a');
-  rawpixel.href = 'https://www.freepik.com/author/rawpixel-com';
-  rawpixel.target = '_blank';
-  rawpixel.textContent = 'Images by: Rawpixel';
-  footer.appendChild(rawpixel);
-
-  return footer;
+  return content;
 }
 
 function clearContent() {
   const content = document.querySelector('#content');
   const navbar = document.querySelector('.navBar');
-  const footer = document.querySelector('.footer');
 
-  while (
-    content.firstChild &&
-    content.firstChild !== navbar &&
-    content.firstChild !== footer
-  ) {
+  while (content.firstChild && content.firstChild !== navbar) {
     content.removeChild(content.firstChild);
   }
-  while (
-    content.lastChild &&
-    content.lastChild !== navbar &&
-    content.firstChild !== footer
-  ) {
+  while (content.lastChild && content.lastChild !== navbar) {
     content.removeChild(content.lastChild);
   }
 }
 
 document.body.appendChild(loadNavBar());
 document.body.appendChild(loadHomePage());
-document.body.appendChild(loadFooter());
+
+console.log('This seem to be working.');
