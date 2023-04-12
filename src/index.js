@@ -1,6 +1,7 @@
 // TO DO:
 // 1. Add simple contents
-// 2. Style (including some effect to show which page the user is on)
+// 2. Style (including some effect to show which page the user is on, and position the
+//    img better)
 
 import { loadHomePage } from './home';
 import { loadMenuPage } from './menu';

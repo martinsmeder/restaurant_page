@@ -60,23 +60,21 @@
 }
 
 /* HOME PAGE */
-
 .home {
     width: 90vw;
     max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 40px;
     padding: 20px;
     background-color: rgba(0, 0, 0, .7);
     border-radius: 1%;
-
 }
 
 .home p {
     font-size: 1.4rem;
-    text-align: center;
 }
 
 
@@ -87,3 +85,54 @@
     border-radius: 25%;
 }
 
+/* MENU PAGE */
+.menu {
+    width: 90vw;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 1%;
+}
+
+.menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+}
+
+.menu div p {
+    font-size: 1.2rem;
+}
+
+/* CONTACT PAGE */
+.contact {
+    width: 90vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 1%;
+}
+
+.contact .wrapper {
+    display: flex;
+}
+
+.contact .wrapper div {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
