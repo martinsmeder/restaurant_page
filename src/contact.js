@@ -11,32 +11,11 @@ function loadContactPage() {
   // create the map container div
   const mapDiv = document.createElement('div');
   mapDiv.id = 'map'; // give the container element an ID for Leaflet to use
-  mapDiv.style.height = '400px';
-  mapDiv.style.width = '600px';
+  // mapDiv.style.height = '400px';
+  // mapDiv.style.width = '600px';
 
-  // create the map object
-  const map = L.map(mapDiv).setView([64.0648775533353, -21.95607389588678], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
-
-  // add the container element to the DOM, then add the map to the container
+  // add map container to the contact div
   contact.appendChild(mapDiv);
-
-  // Location
-  const location = document.createElement('div');
-  const locationHeading = document.createElement('h2');
-  const locationParaOne = document.createElement('p');
-  const locationParaTwo = document.createElement('p');
-  locationHeading.textContent = 'Location';
-  locationParaOne.textContent = '10 FakeStreet';
-  locationParaTwo.textContent = '1000, FakeTown, FakeCountry';
-  location.appendChild(locationHeading);
-  location.appendChild(locationParaOne);
-  location.appendChild(locationParaTwo);
-  wrapper.appendChild(location);
 
   // Hours
   const hours = document.createElement('div');
@@ -67,9 +46,34 @@ function loadContactPage() {
   contactDetails.appendChild(contactParaTwo);
   wrapper.appendChild(contactDetails);
 
+  // Location
+  const location = document.createElement('div');
+  const locationHeading = document.createElement('h2');
+  const locationParaOne = document.createElement('p');
+  const locationParaTwo = document.createElement('p');
+  locationHeading.textContent = 'Location';
+  locationParaOne.textContent = '10 FakeStreet';
+  locationParaTwo.textContent = '1000, FakeTown, FakeCountry';
+  location.appendChild(locationHeading);
+  location.appendChild(locationParaOne);
+  location.appendChild(locationParaTwo);
+  wrapper.appendChild(location);
+
   contact.appendChild(wrapper);
 
+  // add everything to the DOM
   content.appendChild(contact);
+
+  // create the map object (after the div has been created and added to the DOM)
+  const map = L.map(mapDiv).setView(
+    [64.06482878338221, -21.956262782251383],
+    13
+  );
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
 
   // Footer
   const footer = document.createElement('div');
@@ -86,6 +90,12 @@ function loadContactPage() {
   rawpixel.target = '_blank';
   rawpixel.textContent = 'Images by: Rawpixel';
   footer.appendChild(rawpixel);
+
+  const jcomp = document.createElement('a');
+  jcomp.href = 'https://www.freepik.com/author/jcomp';
+  jcomp.target = '_blank';
+  jcomp.textContent = 'Background by: Jcomp';
+  footer.appendChild(jcomp);
 
   content.appendChild(footer);
 

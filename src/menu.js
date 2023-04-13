@@ -85,6 +85,12 @@ function loadMenuPage() {
   rawpixel.textContent = 'Images by: Rawpixel';
   footer.appendChild(rawpixel);
 
+  const jcomp = document.createElement('a');
+  jcomp.href = 'https://www.freepik.com/author/jcomp';
+  jcomp.target = '_blank';
+  jcomp.textContent = 'Background by: Jcomp';
+  footer.appendChild(jcomp);
+
   content.appendChild(footer);
 
   return content;
