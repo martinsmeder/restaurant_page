@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+#content {
+    height: 100vh;
+    width: 100vw;
+    background-image:url('../assets/grill.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* NAVIGATION */
+.navBar {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    padding: 10px;
+    border-top: 0px solid #FFF;
+    box-shadow: 0 0 .1rem #FFF;
+    text-shadow: 0 0 .5rem #FFF;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1.5rem;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.navBar h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+}
+
+.active {
+    border-bottom: 1px solid #FFF;
+}
+
+/* FOOTER */
+.footer {
+    font-family: 'Cinzel', serif;
+    background-color: rgba(0, 0, 0, .3);
+    width: 100%;
+    padding: 10px;
+    border-top: 0px solid #FFF;
+    box-shadow: 0 0 .1rem #FFF;
+    text-shadow: 0 0 .5rem #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1.3rem;
+}
+
+.footer a:nth-child(2) {
+    font-size: 1rem;
+}
+
+.footer a:nth-child(3) {
+    font-size: 1rem;
+}
+
+/* HOME PAGE */
+.home {
+    width: 90vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .1rem #FFF;
+    border-radius: 20px;
+}
+
+.home h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+}
+
+.home p {
+    font-size: 1.3rem;
+}
+
+.home img {
+    width: 500px;
+    height: 400px;
+    border: 2px solid #FFF;
+    border-radius: 25%;
+}
+
+/* MENU PAGE */
+.menu {
+    width: 90vw;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .1rem #FFF;
+    border-radius: 20px;
+}
+
+.menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+}
+
+.menu div h2 {
+    font-family: 'Cinzel', serif;
+}
+
+.menu div p {
+    font-size: 1.2rem;
+}
+
+/* CONTACT PAGE */
+#map {
+    height: 400px;
+    width: 600px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.contact {
+    width: 90vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .1rem #FFF;
+    border-radius: 20px;
+}
+
+.contact .wrapper {
+    display: flex;
+}
+
+.contact .wrapper div {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact .wrapper div h2 {
+    font-family: 'Cinzel', serif;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 670px) {
+    #content {
+        min-height: 100vh;
+        height: auto;
+        gap: 10px;
+    }
+    .navBar a {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .home img {
+        width: 300px;
+        height: 200px;  
+    }
+
+    #map {
+        height: 200px;
+        width: 300px;
+    }
+
+    .contact .wrapper {
+        flex-direction: column;
+    }
+}
