@@ -14,7 +14,7 @@ function loadHomePage() {
   home.appendChild(paraOne);
 
   const image = document.createElement('img');
-  image.src = '../dist/images/meat.jpg';
+  image.src = 'images/meat.jpg';
   home.appendChild(image);
 
   const paraTwo = document.createElement('p');
