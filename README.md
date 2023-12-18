@@ -3,11 +3,4 @@
 
 Live demo: https://martinsmeder.github.io/restaurant_page/
 
-A simple restaurant page written in JavaScript.
-
-Some things I've learned:
-* The basics of NPM
-* How to work with Webpack 
-* How to write a complete website in JavaScript (no HTML)
-* How to work with ES6 modules (export and import)
-* How to implement a map with Leaflet JS
+A simple restaurant page written in JavaScript only (no HTML).
